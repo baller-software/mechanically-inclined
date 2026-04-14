@@ -94,7 +94,50 @@ Not Applicable — solo developer. Use tests and self-review of diffs before com
 
 ---
 
-## 4. Documentation Requirements
+## 4. CI/CD & Deployment
+
+### Pipeline as Part of Scaffolding
+
+The CI/CD pipeline is **not optional infrastructure added later** — it is created during initial project scaffolding (Phase 0 of implementation). When setting up a new project or resetting an existing one:
+
+1. Create `.github/workflows/deploy.yml` alongside the first source files
+2. Verify the pipeline runs successfully on the first push to `main`
+3. The site should be deployable from the very first commit that contains buildable code
+
+### GitHub Actions Workflow
+
+The pipeline lives at `.github/workflows/deploy.yml` and handles both build verification and deployment:
+
+| Job | Trigger | What it does |
+|-----|---------|--------------|
+| **build** | Push to `main`, PRs to `main`, manual dispatch | Checkout → Node 22 → `npm ci` → `npm run build` → upload artifact (main only) |
+| **deploy** | After successful build on `main` (not PRs) | Configure Pages → Deploy `dist/` to GitHub Pages |
+
+**Key behaviors:**
+- **PRs only build** — they do not deploy. This catches build errors before merge.
+- **Only `main` deploys** — the deploy job gates on `github.ref == 'refs/heads/main'`.
+- **Concurrency control** — only one deployment runs at a time (`concurrency: group: pages`). In-progress deployments are not cancelled.
+- **Manual trigger** — `workflow_dispatch` allows deploying from the Actions tab without a code push.
+
+### GitHub Pages Configuration
+
+- **Astro config** must include `site` and `base` fields matching the GitHub Pages URL structure:
+  ```js
+  site: 'https://<org>.github.io',
+  base: '/<repo-name>',
+  ```
+- **Repository settings** → Pages → Source must be set to "GitHub Actions" (not "Deploy from a branch").
+- **Permissions** — the workflow needs `contents: read`, `pages: write`, and `id-token: write`.
+
+### When to Update the Pipeline
+
+- If you change the Node.js version in `package.json` `engines`, update the `node-version` in the workflow to match.
+- If you add environment variables needed at build time (e.g., `PUBLIC_FORM_ENDPOINT`), add them as GitHub Actions secrets/variables and pass them in the build step.
+- If you add a test suite, add a test step between install and build.
+
+---
+
+## 5. Documentation Requirements
 
 - **Comments in code:**
   - Comment the "why," not the "what" — if the code needs a "what" comment, the code should be clearer
@@ -106,7 +149,7 @@ Not Applicable — solo developer. Use tests and self-review of diffs before com
 
 ---
 
-## 5. Error Handling & Logging
+## 6. Error Handling & Logging
 
 - **Fail fast:** If a required directory, file, or tool isn't found, exit immediately with a clear error message. Don't attempt partial installs
 - **Error messages:** Include what went wrong, what was expected, and what the user can do about it
@@ -123,7 +166,7 @@ Not Applicable — solo developer. Use tests and self-review of diffs before com
 
 ---
 
-## 6. Performance & Optimization
+## 7. Performance & Optimization
 
 - **Install speed:** The `npx gspec` flow should complete in under 5 seconds on a warm npm cache. Minimize dependencies in `package.json` to keep install fast
 - **No premature optimization:** The CLI runs once per install, not in a hot loop. Optimize for clarity and correctness, not speed
@@ -132,7 +175,7 @@ Not Applicable — solo developer. Use tests and self-review of diffs before com
 
 ---
 
-## 7. Security Practices
+## 8. Security Practices
 
 - **Input validation:** Validate all user-provided paths and arguments before using them in file operations or shell commands. Never interpolate raw user input into shell commands without sanitization
 - **No secrets in the repo:** The project has no secrets, API keys, or credentials. Keep it that way. If secrets are ever needed, use environment variables and document them
@@ -145,7 +188,7 @@ Not Applicable — solo developer. Use tests and self-review of diffs before com
 
 ---
 
-## 8. Refactoring Guidelines
+## 9. Refactoring Guidelines
 
 - **When to refactor:** When you're about to add a feature and the existing code makes it awkward. Refactor first in a separate commit, then add the feature
 - **When to rewrite:** Only when the current approach is fundamentally wrong (e.g., a platform detection strategy that can't support a new platform). This should be rare at MVP stage
@@ -159,7 +202,7 @@ Not Applicable — solo developer. Use tests and self-review of diffs before com
 
 ---
 
-## 9. Definition of Done
+## 10. Definition of Done
 
 A change is done when:
 
@@ -169,6 +212,7 @@ A change is done when:
 - [ ] Error paths produce clear, actionable messages
 - [ ] `--verbose` output is helpful for debugging
 - [ ] No regressions in existing tests
+- [ ] CI pipeline passes (build succeeds in GitHub Actions)
 - [ ] Commit message explains the "why"
 - [ ] Version bumped in `package.json` if this is a release
 - [ ] Changelog updated if this is a user-facing change

@@ -5,6 +5,8 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
+  site: 'https://baller-software.github.io',
+  base: '/mechanically-inclined',
   vite: {
     plugins: [tailwindcss()]
   }

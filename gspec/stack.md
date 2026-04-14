@@ -38,7 +38,7 @@ None — all information is clear.
 
 ### Runtime Environment
 
-- **Node.js 20 LTS** — Used for Astro site generation. Pinned in CI via GitHub Actions `setup-node`.
+- **Node.js 22 LTS** — Used for Astro site generation. Pinned in CI via GitHub Actions `setup-node`.
 - **No container runtime** — Not needed for a static site.
 
 ---
@@ -101,10 +101,11 @@ Not Applicable.
 
 | Stage | Trigger | Steps |
 |-------|---------|-------|
-| Build | Push to main (website paths changed), PRs to main | Checkout → Node 20 → Install deps → `astro build` |
-| Deploy | Build success on main | Deploy build output to GitHub Pages via `actions/deploy-pages` |
+| Build | Push to main, PRs to main, manual dispatch | Checkout → Node 22 → `npm ci` → `astro build` |
+| Deploy | Build success on main (not PRs) | Configure Pages → Deploy `dist/` via `actions/deploy-pages` |
 
-- Path filtering scopes the workflow so non-website changes don't trigger deploys.
+- PRs trigger the build job only (no deploy) to catch errors before merge.
+- Manual dispatch (`workflow_dispatch`) is enabled for ad-hoc deploys.
 
 ### Infrastructure as Code
 
@@ -219,7 +220,7 @@ Not Applicable.
 
 - **Astro:** Follow major version upgrade guides. Astro has a strong commitment to smooth upgrades.
 - **Tailwind CSS:** v4 is current. Tailwind's upgrade tooling (`@tailwindcss/upgrade`) automates major version migrations.
-- **Node.js:** Track LTS releases. Currently Node 20, move to Node 22 LTS when ready.
+- **Node.js:** Track LTS releases. Currently Node 22 LTS.
 
 ---
 
