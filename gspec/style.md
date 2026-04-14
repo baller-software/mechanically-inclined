@@ -129,33 +129,37 @@ Standard 4px grid system.
 
 ### Buttons
 
-- **Primary**: Background `#2563EB`, text white, border-radius 6px.
-- **Primary Hover**: Background `#1D4ED8`.
-- **Secondary**: Background transparent, border 1px `#CBD5E1` (Light) / `#475569` (Dark), text `#334155` (Light) / `#CBD5E1` (Dark).
-- **Ghost**: No border, no background. Hover: subtle background fill.
+- **Primary**: Background `#2563EB`, text white, border-radius 8px (`rounded-lg`). Height 48px for large/CTA, 40px for standard. Minimum touch target 44x44px.
+- **Primary Hover**: Background `#1D4ED8`, shadow elevation increase, subtle upward translate (`-translate-y-0.5`).
+- **Secondary / Ghost**: Background transparent, border 1px or 2px `white/30` (on dark backgrounds) or `--color-border`. Hover: subtle background fill.
+- **CTA Buttons**: Always appear in pairs — a solid primary button and a ghost/outline companion (e.g., "Get a Free Quote" + "Call (972) 800-7000"). Stack vertically on mobile, side-by-side on `sm:`.
 - **Disabled**: 50% opacity, `cursor: not-allowed`.
-- **Sizes**: Default 40px height, Large 48px height. Minimum touch target 44x44px.
+- **Icon + Text**: Inline SVG icon (h-4 w-4) placed to the left of text (phone icon) or right of text (arrow icon).
 
 ### Form Elements
 
 - **Input Background**: Transparent (Light) / Transparent (Dark).
-- **Input Border**: 1px `#CBD5E1` (Light) / `#334155` (Dark), border-radius 6px.
-- **Focus**: Border `#2563EB` (2px), ring `rgba(37, 99, 235, 0.2)`.
-- **Error**: Border `#EF4444`, helper text in `#EF4444`.
+- **Input Border**: 1px `--color-border`, border-radius 6px (`rounded-md`).
+- **Focus**: Border `#2563EB`, ring `rgba(37, 99, 235, 0.2)` via `focus:ring-2 focus:ring-primary/20`.
+- **Error**: Border `--color-error`, helper text in `--color-error` shown inline below the field.
 - **Disabled**: 50% opacity.
+- **Min height**: 44px for all inputs to meet touch target requirements.
 
 ### Cards & Containers
 
-- **Background**: `#FFFFFF` (Light) / `#1E293B` (Dark).
-- **Border**: 1px solid `#E2E8F0` (Light) / `#334155` (Dark).
-- **Border-radius**: 8px.
-- **Shadow**: `--shadow-sm` or none. Heavy shadows are avoided for a clean look.
+- **Border-radius**: 16px (`rounded-2xl`) for cards and content containers. 12px (`rounded-xl`) for smaller elements like badges and icon containers.
+- **Border**: 1px solid `--color-border`.
+- **Background**: `--color-background` (Light) / `--color-surface` (Dark).
+- **Hover interaction**: Cards lift on hover via `-translate-y-1` with `shadow-lg` transition. Duration 300ms.
+- **Shadow**: Cards use minimal or no shadow at rest. Shadow appears on hover (`hover:shadow-lg`). Floating/elevated elements (stats bar, contact cards) use `--shadow-xl`.
 
 ### Navigation Elements
 
-- **Link Color**: `--color-text-secondary` default, `--color-text-primary` on hover.
-- **Active Link**: `--color-primary` text color.
-- **Nav Background**: `--color-background` with optional `--shadow-md` for sticky positioning.
+- **Header**: Sticky top with glassmorphic background: `bg-[--color-background]/80 backdrop-blur-lg`. Border-bottom in `--color-border`.
+- **Logo**: Icon mark (9x9 `rounded-lg` primary background) + text wordmark. Subtitle in 11px uppercase tracking-wider.
+- **Nav Links**: `rounded-lg px-4 py-2`. Active state: `bg-primary/10 text-primary`. Hover: `bg-[--color-surface]`.
+- **Phone CTA in Nav**: Primary button with phone icon, always visible in desktop nav. Full-width in mobile menu.
+- **Mobile Menu**: Hamburger toggles to X icon. Menu panel with stacked links + full-width phone CTA button at bottom.
 
 ---
 
@@ -163,28 +167,121 @@ Standard 4px grid system.
 
 ### Shadows & Elevation
 
-Minimalist approach.
+Layered elevation system — elements gain shadow on interaction or when floating.
 
-- **None**: Most elements.
-- **sm**: `0 1px 2px rgba(0, 0, 0, 0.05)` for cards to lift slightly off background.
-- **md**: `0 4px 6px rgba(0, 0, 0, 0.07)` for floating elements or sticky headers.
+- **None**: Most elements at rest.
+- **sm**: `0 1px 2px rgba(0, 0, 0, 0.05)` — subtle resting state for logo icon, social links.
+- **md**: `0 4px 6px rgba(0, 0, 0, 0.07)` — sticky header (via glassmorphic blur, not shadow).
+- **lg**: `0 10px 25px rgba(0, 0, 0, 0.1)` — cards on hover, contact info cards.
+- **xl**: `0 20px 50px rgba(0, 0, 0, 0.15)` — floating/overlapping elements (stats bar, elevated panels).
 
 ### Border Radius
 
-- **Standard**: 6px for inputs/buttons.
-- **Large**: 8px for cards/containers.
-- **Pills**: 9999px for status tags.
+- **Standard**: 6px (`rounded-md`) for inputs, buttons, small elements.
+- **Medium**: 8px (`rounded-lg`) for CTA buttons, nav links, icon containers, logo mark.
+- **Large**: 16px (`rounded-2xl`) for cards, content containers, image wrappers, section panels.
+- **Full**: 12px (`rounded-xl`) for icon backgrounds, badges.
+- **Pills**: 9999px (`rounded-full`) for status tags, indicator dots.
 
 ### Transitions & Animations
 
-- **Speed**: Fast (150ms or 200ms).
-- **Ease**: `cubic-bezier(0, 0, 0.2, 1)` (ease-out).
-- **Feedback**: Immediate visual feedback on interaction (hover color shift, subtle scale reduction on press for buttons).
-- **Loading States**: Skeleton screens or spinner indicators for async operations.
+- **Speed**: Fast (150ms) for color/opacity changes. Medium (200ms) for transforms and layout shifts. Slow (300ms) for card hover lifts and complex interactions. 500ms for image zoom on hover.
+- **Ease**: `cubic-bezier(0, 0, 0.2, 1)` (ease-out) for all transitions.
+- **Hover lift**: Cards and interactive elements translate upward (`-translate-y-0.5` for buttons, `-translate-y-1` for cards) with shadow increase.
+- **Icon scale**: Icon containers scale up on group hover (`group-hover:scale-110`).
+- **Image zoom**: Images inside cards scale up on hover (`group-hover:scale-105`, duration 500ms) with `overflow-hidden` on the container.
+- **Loading States**: Spinner icon (animate-spin SVG circle) for form submission. Pulsing dot (`animate-pulse`) for status indicators.
+
+### Glassmorphism
+
+- **Header**: `bg-[--color-background]/80 backdrop-blur-lg` for a frosted-glass sticky header effect.
+- **Hero badges**: `bg-white/10 backdrop-blur-sm border-white/20` for floating labels on dark hero backgrounds.
 
 ---
 
-## 8. Iconography
+## 8. Page & Section Patterns
+
+### Hero Sections
+
+Two hero variants are used across the site:
+
+- **Full-bleed hero** (Home page): Minimum height `85vh`. Full-width background image with gradient overlay (`bg-gradient-to-r from-slate-900/90 via-slate-900/70 to-slate-900/40`). Content constrained to `max-w-xl` on the left. Includes a status badge (glassmorphic pill with pulsing dot), H1 headline, body text, and dual CTA buttons.
+- **Page hero** (About, Contact): Shorter height with `py-20 sm:py-28`. Same background image + gradient overlay pattern. Includes a small uppercase label in `--color-primary-light`, H1, and subtitle text in `slate-300`.
+
+### Section Headers
+
+Every major content section follows this pattern:
+1. Small uppercase label: `text-sm font-semibold uppercase tracking-wider text-primary`
+2. H2 heading: `mt-2 text-3xl font-bold sm:text-4xl`
+3. Optional subtitle: `mx-auto mt-4 max-w-2xl text-[--color-text-secondary]`
+4. All centered (`text-center`) unless the section uses a side-by-side layout.
+
+### Floating / Overlapping Elements
+
+Key sections use negative margins to overlap the section above:
+- **Stats bar**: `relative -mt-12 z-10` — a card grid that floats over the hero bottom edge, anchored with `--shadow-xl`.
+- **Contact cards**: `relative -mt-10 z-10` — three info cards overlapping the contact page hero.
+
+This overlap pattern creates visual depth and ties sections together.
+
+### Alternating Section Backgrounds
+
+Sections alternate between `--color-background` (white/dark base) and `--color-surface` (subtle gray/slate). This creates visual rhythm without heavy dividers. Pattern:
+- Hero → (overlap element) → white section → surface section → white section → CTA.
+
+### Side-by-Side Layouts
+
+Used on About page for story/mission sections:
+- `grid lg:grid-cols-2 gap-12 lg:gap-16 items-center`
+- Image on one side, text content on the other.
+- Alternate order on subsequent sections (`order-1 lg:order-2` swap).
+- Images are `rounded-2xl overflow-hidden`.
+- Optional floating badge absolutely positioned on the image (e.g., "4 Years — Nextdoor Favorite").
+
+### Value Proposition Cards
+
+Icon-driven cards with color-coded icon backgrounds:
+- Each card has a distinct color (emerald, blue, amber, sky) to create visual variety.
+- Icon container: `h-12 w-12 rounded-xl bg-{color}-100 text-{color}-600` (light mode), `dark:bg-{color}-900/30 dark:text-{color}-400`.
+- Cards hover with `-translate-y-1` and `shadow-lg`.
+- Icon scales up on hover via `group-hover:scale-110`.
+
+### Service Cards
+
+Image-topped cards:
+- `rounded-2xl overflow-hidden` container with border.
+- Image area: `h-48 overflow-hidden` with `object-cover`. Gradient overlay `bg-gradient-to-t from-black/30 to-transparent`.
+- Image zooms on hover: `transition-transform duration-500 group-hover:scale-105`.
+- Text content in `p-6` below the image.
+
+### Testimonial Cards
+
+Quote cards with star ratings:
+- 5 amber star SVGs at the top.
+- Large decorative quote mark SVG (`text-primary/10`) positioned `absolute top-6 right-6`.
+- Quote text in `--color-text-primary` with generous line-height (1.7).
+- Source attribution with em-dash prefix.
+
+### CTA Sections
+
+Full-width CTA with background image and primary color gradient overlay:
+- `bg-gradient-to-r from-primary/95 via-primary/90 to-primary-dark/90` over the image.
+- Centered text (H2 in white, subtitle in `blue-100`).
+- Dual buttons: solid white button + ghost outline button with phone icon.
+- Both buttons have hover lift (`-translate-y-0.5`) and shadow transitions.
+
+### Footer
+
+Four-column grid (`lg:grid-cols-4`):
+- Column 1: Brand logo + description + social links (icon buttons in `h-9 w-9 rounded-lg`).
+- Column 2: Quick links.
+- Column 3: Contact info.
+- Column 4: Hours with label/value flex layout.
+- Section headers: `text-sm font-semibold uppercase tracking-wider`.
+
+---
+
+## 9. Iconography
 
 ### Icon Library
 
@@ -202,7 +299,7 @@ Minimalist approach.
 
 ---
 
-## 9. Imagery & Media
+## 10. Imagery & Media
 
 ### Photography Style
 
@@ -222,7 +319,7 @@ Empty states use icon + text patterns. If illustrations are added, they should u
 
 ---
 
-## 10. Accessibility
+## 11. Accessibility
 
 ### Contrast Requirements
 
@@ -241,7 +338,7 @@ Empty states use icon + text patterns. If illustrations are added, they should u
 
 ---
 
-## 11. Responsive Design
+## 12. Responsive Design
 
 ### Breakpoints
 
@@ -257,7 +354,7 @@ Empty states use icon + text patterns. If illustrations are added, they should u
 
 ---
 
-## 12. Usage Examples
+## 13. Usage Examples
 
 ### Design Tokens
 
@@ -317,10 +414,13 @@ Tokens are defined as framework-agnostic CSS custom properties.
   /* Shadows */
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
   --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07);
+  --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 50px rgba(0, 0, 0, 0.15);
 
   /* Transitions */
   --duration-fast: 150ms;
   --duration-medium: 200ms;
+  --duration-slow: 300ms;
   --ease-out: cubic-bezier(0, 0, 0.2, 1);
 }
 
