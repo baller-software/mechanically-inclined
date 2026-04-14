@@ -1,0 +1,168 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTASection from '../components/CTASection.astro';
+
+const values = [
+  {
+    title: 'Honesty First',
+    description: 'We tell you exactly what needs fixing — and what can wait. No upselling, no surprises.',
+    icon: '<svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z" /></svg>',
+  },
+  {
+    title: 'Fair Pricing',
+    description: 'Reasonable rates with no hidden fees. We believe great service shouldn\'t break the bank.',
+    icon: '<svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m-3-2.818.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" /></svg>',
+  },
+  {
+    title: 'Community Commitment',
+    description: 'We live and work here too. Your neighborhood is our neighborhood, and we treat it that way.',
+    icon: '<svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 21v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21m0 0h4.5V3.545M12.75 21h7.5V10.75M2.25 21h1.5m18 0h-18M2.25 9l4.5-1.636M18.75 3l-1.5.545m0 6.205 3 1m1.5.5-1.5-.5M6.75 7.364V3h-3v18m3-13.636 10.5-3.819" /></svg>',
+  },
+];
+---
+
+<BaseLayout title="About" description="Learn about Mechanically Inclined Sprinkler Repair & More — our story, mission, and commitment to water management in Forney, TX.">
+
+  <!-- ===== PAGE HERO ===== -->
+  <section class="relative overflow-hidden py-20 sm:py-28">
+    <div class="absolute inset-0">
+      <img
+        src="https://images.unsplash.com/photo-1501854140801-50d01698950b?w=1600&h=700&fit=crop&q=80"
+        alt=""
+        class="h-full w-full object-cover"
+        loading="eager"
+      />
+      <div class="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-900/80 to-slate-900/60"></div>
+    </div>
+    <div class="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <p class="text-sm font-semibold uppercase tracking-wider text-primary-light">About Us</p>
+      <h1 class="mt-3 text-4xl font-bold text-white sm:text-5xl" style="line-height: 1.15;">
+        Built on Trust,<br />Driven by Service
+      </h1>
+      <p class="mt-4 max-w-xl text-lg text-slate-300" style="line-height: 1.6;">
+        We're a Forney, Texas-based team that treats every lawn like our own and every customer like a neighbor.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== OUR STORY ===== -->
+  <section class="py-20 sm:py-24">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div class="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+        <!-- Image -->
+        <div class="relative">
+          <div class="overflow-hidden rounded-2xl">
+            <img
+              src="https://images.unsplash.com/photo-1594348352429-159508d48c57?w=700&h=500&fit=crop&q=80"
+              alt="White house with beautifully manicured green lawn"
+              class="h-full w-full object-cover"
+              loading="lazy"
+            />
+          </div>
+          <!-- Floating badge -->
+          <div class="absolute -bottom-6 -right-4 rounded-xl border border-[var(--color-border)] bg-[var(--color-background)] px-5 py-3 shadow-lg sm:-right-6">
+            <p class="text-2xl font-bold text-primary">4 Years</p>
+            <p class="text-xs font-medium text-[var(--color-text-secondary)]">Nextdoor Favorite</p>
+          </div>
+        </div>
+
+        <!-- Content -->
+        <div>
+          <p class="text-sm font-semibold uppercase tracking-wider text-primary">Our Story</p>
+          <h2 class="mt-2 text-3xl font-bold text-[var(--color-text-primary)] sm:text-4xl">
+            From Forney, For Forney
+          </h2>
+          <div class="mt-6 space-y-4 text-[var(--color-text-secondary)]" style="line-height: 1.7;">
+            <p>
+              Mechanically Inclined Sprinkler Repair & More started with a simple idea: every homeowner
+              and business in Forney, Texas deserves honest, dependable help keeping their outdoor spaces
+              healthy and water-efficient.
+            </p>
+            <p>
+              Based on Long Prairie Drive in Forney, we've grown into a trusted partner for the community —
+              handling everything from broken sprinkler heads to full system installations, French drains,
+              concrete work, landscape design, and more. Our versatility means one call solves most outdoor
+              maintenance and water management challenges.
+            </p>
+            <p>
+              We've been recognized as a Nextdoor Neighborhood Favorite four years running (2021-2024)
+              and carry a 100% recommendation rate on Facebook. Those numbers reflect something we care
+              about deeply: earning trust through honest work, fair pricing, and showing up when we say
+              we will.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== MISSION ===== -->
+  <section class="bg-[var(--color-surface)] py-20 sm:py-24">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div class="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+        <!-- Content -->
+        <div class="order-2 lg:order-1">
+          <p class="text-sm font-semibold uppercase tracking-wider text-primary">Our Mission</p>
+          <h2 class="mt-2 text-3xl font-bold text-[var(--color-text-primary)] sm:text-4xl">
+            Saving Water, Saving Money
+          </h2>
+          <blockquote class="mt-6 rounded-xl border-l-4 border-primary bg-primary/5 py-4 pl-6 pr-4">
+            <p class="text-xl font-medium text-[var(--color-text-primary)] italic" style="line-height: 1.5;">
+              "Water is the new gold. Let us help you save money by saving water."
+            </p>
+          </blockquote>
+          <p class="mt-6 text-[var(--color-text-secondary)]" style="line-height: 1.7;">
+            We believe efficient water management shouldn't be complicated or expensive. Our mission is to
+            be your resourceful partner — delivering practical solutions that keep your landscape thriving
+            while protecting your wallet and the environment. Whether it's a quick sprinkler head replacement
+            or a comprehensive irrigation overhaul, we bring the same commitment to every job.
+          </p>
+        </div>
+
+        <!-- Image -->
+        <div class="order-1 lg:order-2">
+          <div class="overflow-hidden rounded-2xl">
+            <img
+              src="https://images.unsplash.com/photo-1692369584496-3216a88f94c1?w=700&h=500&fit=crop&q=80"
+              alt="Irrigation system watering lush green field"
+              class="h-full w-full object-cover"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== VALUES ===== -->
+  <section class="py-20 sm:py-24">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center">
+        <p class="text-sm font-semibold uppercase tracking-wider text-primary">What Drives Us</p>
+        <h2 class="mt-2 text-3xl font-bold text-[var(--color-text-primary)] sm:text-4xl">
+          Our Core Values
+        </h2>
+      </div>
+
+      <div class="mt-14 grid gap-8 sm:grid-cols-3">
+        {values.map(v => (
+          <div class="text-center">
+            <div class="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10 text-primary">
+              <Fragment set:html={v.icon} />
+            </div>
+            <h3 class="mt-5 text-lg font-semibold text-[var(--color-text-primary)]">{v.title}</h3>
+            <p class="mt-2 text-sm text-[var(--color-text-secondary)]" style="line-height: 1.6;">
+              {v.description}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <CTASection
+    heading="Let's Talk About Your Project"
+    text="Ready to improve your outdoor spaces? We'd love to hear from you."
+  />
+</BaseLayout>

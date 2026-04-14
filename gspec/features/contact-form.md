@@ -56,57 +56,57 @@ A reusable contact form component that lets visitors submit a structured inquiry
 
 ## Capabilities
 
-- [ ] **P0**: Visitor can fill in required fields (name, email, message) and submit the form
+- [x] **P0**: Visitor can fill in required fields (name, email, message) and submit the form
   - Form renders name, email, and message fields, each with a visible label
   - All three fields are required; form cannot be submitted with any of them empty
   - On valid submission, form data is sent to a server-side endpoint as a structured payload
   - After successful server response, a clear success message is displayed
 
-- [ ] **P0**: Form validates input and shows inline errors before submission
+- [x] **P0**: Form validates input and shows inline errors before submission
   - Empty required fields show a "required" error when the visitor attempts to submit
   - Email field validates format and shows a specific error for malformed addresses
   - Errors appear inline next to or below the relevant field
   - Existing field values are preserved when validation errors are displayed
 
-- [ ] **P0**: Form displays clear feedback for success and error outcomes
+- [x] **P0**: Form displays clear feedback for success and error outcomes
   - On success, a thank-you or confirmation message replaces or overlays the form so the visitor knows the message was received
   - On server error, an actionable error message is shown (e.g., "Something went wrong — please try again or contact us by phone")
   - Feedback persists on screen until the visitor takes further action; it does not auto-dismiss
 
-- [ ] **P0**: Submit control is guarded to prevent double submissions
+- [x] **P0**: Submit control is guarded to prevent double submissions
   - The submit button is disabled (or the form is otherwise guarded) while a submission request is in flight
   - A loading indicator is visible during the request so the visitor knows the form is processing
 
-- [ ] **P0**: Form is accessible
+- [x] **P0**: Form is accessible
   - Every input has a programmatically associated label
   - Tab order follows a logical sequence through fields and the submit button
   - Validation errors are announced to assistive technology (e.g., via live regions or focus management)
   - Error messages are visible and not conveyed by color alone
 
-- [ ] **P1**: Visitor can optionally provide a phone number
+- [x] **P1**: Visitor can optionally provide a phone number
   - An optional phone number field is displayed with a clear indication that it is not required
   - The form submits successfully with or without a phone number value
   - If provided, the phone number is included in the payload sent to the server
 
-- [ ] **P1**: Form layout is responsive across device sizes
+- [x] **P1**: Form layout is responsive across device sizes
   - On desktop, fields may be arranged in a multi-column layout where appropriate
   - On mobile, all fields stack vertically with touch-friendly input sizes (minimum 44px tap targets)
   - No horizontal scrolling at any viewport width
   - Labels remain legible and inputs remain usable at all sizes
 
-- [ ] **P1**: Hidden honeypot field deters automated spam submissions
+- [x] **P1**: Hidden honeypot field deters automated spam submissions
   - A visually hidden field is included in the form markup
   - The field is not visible or focusable to human users
   - If the honeypot field contains a value on submission, the form either silently discards the submission or the server rejects it
   - Legitimate users are never affected by the honeypot mechanism
 
-- [ ] **P1**: Key conversion pages include a call-to-action linking to the contact form
+- [x] **P1**: Key conversion pages include a call-to-action linking to the contact form
   - Pages where visitors evaluate the business (e.g., Home, Services) include a CTA section near the bottom that directs visitors to the contact page
   - The CTA includes a clear heading and a button or link to the contact page
   - The CTA is visually distinct from surrounding content sections
   - The CTA does not duplicate the full form — it links to the dedicated contact page where the form lives
 
-- [ ] **P2**: Form is a self-contained, reusable component
+- [x] **P2**: Form is a self-contained, reusable component
   - The form can be embedded on different pages without code duplication
   - Placement on a page does not require page-specific modifications to the form's internal logic
   - The server endpoint URL is configurable (e.g., via props, config, or environment) rather than hardcoded

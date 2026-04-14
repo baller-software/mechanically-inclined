@@ -46,27 +46,27 @@ A static About page that tells the story of the business and communicates its mi
 
 ## Capabilities
 
-- [ ] **P0**: Company story section communicates the background and origin of the business
+- [x] **P0**: Company story section communicates the background and origin of the business
   - Section includes a heading and one or more paragraphs of narrative text
   - Content is readable and well-structured without feeling like a wall of text
   - Section is visually distinct from the mission section
 
-- [ ] **P0**: Mission or purpose statement section articulates why the business exists
+- [x] **P0**: Mission or purpose statement section articulates why the business exists
   - Mission statement is presented with visual emphasis (e.g., larger text, distinct styling) to differentiate it from the narrative story
   - Statement is concise and scannable — ideally 1-3 sentences
   - Section is visually separated from the company story section
 
-- [ ] **P0**: Page is fully responsive across common device sizes
+- [x] **P0**: Page is fully responsive across common device sizes
   - Layout adapts cleanly to desktop (1024px+), tablet (768px), and mobile (375px) viewports
   - No horizontal scrolling on any viewport
   - Text remains readable at all sizes
 
-- [ ] **P1**: Page structure supports scannability
+- [x] **P1**: Page structure supports scannability
   - Clear visual hierarchy guides the visitor through the content in a logical order
   - Sections are separated with adequate spacing to avoid a dense, text-heavy appearance
   - Page can be skimmed in under 15 seconds to get the gist of the business
 
-- [ ] **P2**: Semantic page structure supports accessibility
+- [x] **P2**: Semantic page structure supports accessibility
   - Page uses proper heading hierarchy (single h1, logical h2/h3 nesting)
   - Content is navigable via keyboard
   - Sufficient color contrast for all text elements

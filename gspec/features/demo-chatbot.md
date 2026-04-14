@@ -52,50 +52,50 @@ The chatbot is transparently framed as a demo, showing visitors (and prospective
 
 ## 4. Capabilities
 
-- [ ] **P0**: Floating chat widget appears on all pages as a bubble in the bottom-right corner
+- [x] **P0**: Floating chat widget appears on all pages as a bubble in the bottom-right corner
   - Bubble is visible and clickable on every page of the site
   - Clicking the bubble opens the chat panel; clicking again (or a close button) dismisses it
   - Widget does not obstruct primary page content or navigation
   - Widget is responsive and usable on both desktop and mobile viewports
 
-- [ ] **P0**: Chat panel displays a transparent demo banner on conversation start
+- [x] **P0**: Chat panel displays a transparent demo banner on conversation start
   - Opening the chat shows an introductory message framing the experience as a demo (e.g., "This is a preview of what an AI assistant could do for your business")
   - The banner is visible before or alongside the first bot message
   - The banner does not block the conversation flow
 
-- [ ] **P0**: Bot responds to quick-reply button selections with scripted conversation branches
+- [x] **P0**: Bot responds to quick-reply button selections with scripted conversation branches
   - Bot presents 2–4 quick-reply buttons after each message where applicable
   - Selecting a button advances the conversation along a predefined decision tree
   - Conversation covers at least three top-level topics: services, contact/scheduling, and general FAQs
   - Each topic branch is at least 2 levels deep (initial question → follow-up → answer/action)
 
-- [ ] **P0**: Bot matches free-text input to canned responses via keyword matching
+- [x] **P0**: Bot matches free-text input to canned responses via keyword matching
   - Common keywords and phrases (e.g., "hours", "phone", "lawn", "quote", "pricing") trigger relevant canned responses
   - Matching is case-insensitive
   - Unrecognized input produces a helpful fallback message that suggests using the quick-reply buttons or contacting the business directly
 
-- [ ] **P1**: Bot provides quick-reply action buttons that navigate the user to relevant pages
+- [x] **P1**: Bot provides quick-reply action buttons that navigate the user to relevant pages
   - At appropriate points in conversation, bot offers buttons like "View Services" or "Go to Contact Page"
   - Selecting a navigation button takes the user to the corresponding page
 
-- [ ] **P1**: Bot offers a quick-reply action to open or scroll to the contact form
+- [x] **P1**: Bot offers a quick-reply action to open or scroll to the contact form
   - At least one conversation path ends with an option to go to the contact form
   - Selecting the action navigates the user to the contact page or scrolls to the contact form if on the same page
 
-- [ ] **P1**: Conversation content covers services offered by the business
+- [x] **P1**: Conversation content covers services offered by the business
   - Bot can describe the types of services available at a summary level
   - Bot can answer common service questions (e.g., service area, seasonal availability)
   - Service information is maintainable as static data within the codebase
 
-- [ ] **P1**: Conversation content covers contact and scheduling inquiries
+- [x] **P1**: Conversation content covers contact and scheduling inquiries
   - Bot can surface business contact information (phone, email, address, hours)
   - Bot can explain how to request a quote or schedule a consultation
 
-- [ ] **P2**: Conversation content covers general FAQs about the business
+- [x] **P2**: Conversation content covers general FAQs about the business
   - Bot can answer 3–5 common questions (e.g., "How long have you been in business?", "Are you licensed and insured?", "What areas do you serve?")
   - FAQ content is maintainable as static data within the codebase
 
-- [ ] **P2**: Chat panel supports smooth open/close animations
+- [x] **P2**: Chat panel supports smooth open/close animations
   - Opening and closing the chat panel uses a brief transition animation
   - Animation does not delay interactivity or feel sluggish
 

@@ -1,0 +1,271 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTASection from '../components/CTASection.astro';
+
+const services = [
+  {
+    name: 'Sprinkler Installation & Repair',
+    description: 'Complete sprinkler system installation, repair, and maintenance. From broken heads to full controller replacements.',
+    image: 'https://images.unsplash.com/photo-1622122123829-e0490a288d04?w=600&h=400&fit=crop&q=80',
+    alt: 'Sprinkler head spraying water on a green lawn',
+  },
+  {
+    name: 'Lawn Services',
+    description: 'Professional lawn care to keep your yard looking its best. Regular maintenance and seasonal treatments.',
+    image: 'https://images.unsplash.com/photo-1458245201577-fc8a130b8829?w=600&h=400&fit=crop&q=80',
+    alt: 'Lawn mower on fresh green grass',
+  },
+  {
+    name: 'French Drain Installation',
+    description: 'Proper drainage solutions to protect your property from water damage and flooding.',
+    image: 'https://images.unsplash.com/photo-1501854140801-50d01698950b?w=600&h=400&fit=crop&q=80',
+    alt: 'Water drainage system in landscaped yard',
+  },
+  {
+    name: 'Concrete Work',
+    description: 'Quality concrete installations including patios, walkways, and driveways for your outdoor spaces.',
+    image: 'https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop',
+    alt: 'Beautiful home with concrete driveway and patio at dusk',
+  },
+  {
+    name: 'Lighting Installation',
+    description: 'Outdoor and landscape lighting to enhance your property\'s beauty and security after dark.',
+    image: 'https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop',
+    alt: 'House exterior with warm outdoor lighting at dusk',
+  },
+  {
+    name: 'Landscape Design',
+    description: 'Professional landscape architecture and design services to transform your outdoor living spaces.',
+    image: 'https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=600&h=400&fit=crop&q=80',
+    alt: 'Beautiful landscaped garden design',
+  },
+];
+
+const stats = [
+  { value: '4x', label: 'Nextdoor Favorite', sublabel: '2021 - 2024' },
+  { value: '100%', label: 'Recommendation Rate', sublabel: 'On Facebook' },
+  { value: '6 Days', label: 'Weekly Availability', sublabel: 'Mon - Sat' },
+  { value: '20+', label: 'Verified Reviews', sublabel: 'And counting' },
+];
+
+const testimonials = [
+  {
+    quote: 'Mechanically Inclined Sprinkler Repair & More comes highly recommended for their honesty, reasonable pricing, and excellent communication.',
+    source: 'Nextdoor Verified Neighbors',
+  },
+  {
+    quote: 'They are praised for their promptness and are considered the go-to for sprinkler repairs in the Forney area.',
+    source: 'Nextdoor Verified Neighbor',
+  },
+  {
+    quote: 'A top choice for those in need of sprinkler system work. Reliable, resourceful, and always ready to help.',
+    source: 'Facebook Review',
+  },
+];
+---
+
+<BaseLayout title="Home" description="Mechanically Inclined Sprinkler Repair & More — Expert sprinkler repair, lawn care, and water management in Forney, TX. Honest service, reasonable pricing.">
+
+  <!-- ===== HERO ===== -->
+  <section class="relative min-h-[85vh] flex items-center overflow-hidden">
+    <!-- Background image -->
+    <div class="absolute inset-0">
+      <img
+        src="https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg?auto=compress&cs=tinysrgb&w=1600&h=900&fit=crop"
+        alt=""
+        class="h-full w-full object-cover"
+        loading="eager"
+      />
+      <div class="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-900/70 to-slate-900/40"></div>
+    </div>
+
+    <div class="relative mx-auto max-w-6xl px-4 py-24 sm:px-6 sm:py-32 lg:px-8 lg:py-40">
+      <div class="max-w-xl">
+        <div class="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-sm font-medium text-white backdrop-blur-sm">
+          <span class="inline-block h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          Serving Forney, TX & Surrounding Areas
+        </div>
+        <h1 class="mt-6 text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl" style="line-height: 1.1;">
+          Your Resourceful<br />
+          <span class="text-primary-light">Water Management</span><br />
+          Resource
+        </h1>
+        <p class="mt-6 max-w-lg text-lg text-slate-300" style="line-height: 1.6;">
+          Expert sprinkler repair, installation, and outdoor services. We help you save money by saving water — call anytime with sprinkler concerns.
+        </p>
+        <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+          <a
+            href="/contact"
+            class="inline-flex items-center justify-center rounded-lg bg-primary px-6 py-3.5 text-sm font-semibold text-white shadow-lg transition-all duration-200 hover:bg-primary-dark hover:shadow-xl hover:-translate-y-0.5"
+            style="min-height: 48px;"
+          >
+            Get a Free Quote
+            <svg class="ml-2 h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+            </svg>
+          </a>
+          <a
+            href="tel:9728007000"
+            class="inline-flex items-center justify-center gap-2 rounded-lg border border-white/30 bg-white/10 px-6 py-3.5 text-sm font-semibold text-white backdrop-blur-sm transition-all duration-200 hover:bg-white/20"
+            style="min-height: 48px;"
+          >
+            <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
+            </svg>
+            (972) 800-7000
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== STATS BAR ===== -->
+  <section class="relative -mt-12 z-10">
+    <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 gap-4 rounded-2xl border border-[var(--color-border)] bg-[var(--color-background)] p-6 shadow-xl sm:p-8 lg:grid-cols-4" style="box-shadow: var(--shadow-xl);">
+        {stats.map(stat => (
+          <div class="text-center">
+            <p class="text-2xl font-bold text-primary sm:text-3xl">{stat.value}</p>
+            <p class="mt-1 text-sm font-semibold text-[var(--color-text-primary)]">{stat.label}</p>
+            <p class="text-xs text-[var(--color-text-secondary)]">{stat.sublabel}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== VALUE PROPS ===== -->
+  <section class="py-20 sm:py-24">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center">
+        <p class="text-sm font-semibold uppercase tracking-wider text-primary">Why Choose Us</p>
+        <h2 class="mt-2 text-3xl font-bold text-[var(--color-text-primary)] sm:text-4xl">
+          Trusted by Your Neighbors
+        </h2>
+        <p class="mx-auto mt-4 max-w-2xl text-[var(--color-text-secondary)]" style="line-height: 1.6;">
+          We've built our reputation on four pillars that matter to every homeowner and business we serve.
+        </p>
+      </div>
+
+      <div class="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <!-- Honest -->
+        <div class="group relative rounded-2xl border border-[var(--color-border)] bg-[var(--color-background)] p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+          <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-100 text-emerald-600 dark:bg-emerald-900/30 dark:text-emerald-400 transition-transform duration-300 group-hover:scale-110">
+            <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z" /></svg>
+          </div>
+          <h3 class="mt-4 text-lg font-semibold text-[var(--color-text-primary)]">Honest & Transparent</h3>
+          <p class="mt-2 text-sm text-[var(--color-text-secondary)]" style="line-height: 1.6;">
+            Straightforward pricing with no hidden fees. We tell you what needs fixing and what can wait.
+          </p>
+        </div>
+
+        <!-- Prompt -->
+        <div class="group relative rounded-2xl border border-[var(--color-border)] bg-[var(--color-background)] p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+          <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-100 text-blue-600 dark:bg-blue-900/30 dark:text-blue-400 transition-transform duration-300 group-hover:scale-110">
+            <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" /></svg>
+          </div>
+          <h3 class="mt-4 text-lg font-semibold text-[var(--color-text-primary)]">Prompt Service</h3>
+          <p class="mt-2 text-sm text-[var(--color-text-secondary)]" style="line-height: 1.6;">
+            We show up on time and get the job done right. Same-day service available for urgent repairs.
+          </p>
+        </div>
+
+        <!-- Trusted -->
+        <div class="group relative rounded-2xl border border-[var(--color-border)] bg-[var(--color-background)] p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+          <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-amber-100 text-amber-600 dark:bg-amber-900/30 dark:text-amber-400 transition-transform duration-300 group-hover:scale-110">
+            <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z" /></svg>
+          </div>
+          <h3 class="mt-4 text-lg font-semibold text-[var(--color-text-primary)]">Community Trusted</h3>
+          <p class="mt-2 text-sm text-[var(--color-text-secondary)]" style="line-height: 1.6;">
+            Nextdoor Neighborhood Favorite four years running. 100% recommendation rate on Facebook.
+          </p>
+        </div>
+
+        <!-- Water -->
+        <div class="group relative rounded-2xl border border-[var(--color-border)] bg-[var(--color-background)] p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+          <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-sky-100 text-sky-600 dark:bg-sky-900/30 dark:text-sky-400 transition-transform duration-300 group-hover:scale-110">
+            <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m6.115 5.19.319 1.913A6 6 0 0 0 8.11 10.36L9.75 12l-.387.775c-.217.433-.132.956.21 1.298l1.348 1.348c.21.21.329.497.329.795v1.089c0 .426.24.815.622 1.006l.153.076c.433.217.956.132 1.298-.21l.723-.723a8.7 8.7 0 0 0 2.288-4.042 1.087 1.087 0 0 0-.358-1.099l-1.33-1.108c-.251-.21-.582-.299-.905-.245l-1.17.195a1.125 1.125 0 0 1-.98-.314l-.295-.295a1.125 1.125 0 0 1 0-1.591l.13-.132a1.125 1.125 0 0 1 1.3-.21l.603.302a.809.809 0 0 0 1.086-1.086L14.25 7.5l1.256-.837a4.5 4.5 0 0 0 1.528-1.732l.146-.292M6.115 5.19A9 9 0 1 0 17.18 4.64M6.115 5.19A8.965 8.965 0 0 1 12 3c1.929 0 3.716.607 5.18 1.64" /></svg>
+          </div>
+          <h3 class="mt-4 text-lg font-semibold text-[var(--color-text-primary)]">Water Conservation</h3>
+          <p class="mt-2 text-sm text-[var(--color-text-secondary)]" style="line-height: 1.6;">
+            We help you save money by saving water. Efficient systems that keep your lawn green and your bill low.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SERVICES ===== -->
+  <section id="services" class="bg-[var(--color-surface)] py-20 sm:py-24">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center">
+        <p class="text-sm font-semibold uppercase tracking-wider text-primary">What We Do</p>
+        <h2 class="mt-2 text-3xl font-bold text-[var(--color-text-primary)] sm:text-4xl">
+          Our Services
+        </h2>
+        <p class="mx-auto mt-4 max-w-2xl text-[var(--color-text-secondary)]" style="line-height: 1.6;">
+          From sprinkler systems to landscape design, we're your one-call solution for outdoor maintenance and water management.
+        </p>
+      </div>
+
+      <div class="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {services.map(service => (
+          <div class="group overflow-hidden rounded-2xl border border-[var(--color-border)] bg-[var(--color-background)] transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+            <div class="relative h-48 overflow-hidden">
+              <img
+                src={service.image}
+                alt={service.alt}
+                class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                loading="lazy"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-lg font-semibold text-[var(--color-text-primary)]">{service.name}</h3>
+              <p class="mt-2 text-sm text-[var(--color-text-secondary)]" style="line-height: 1.6;">
+                {service.description}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIALS ===== -->
+  <section class="py-20 sm:py-24">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center">
+        <p class="text-sm font-semibold uppercase tracking-wider text-primary">Testimonials</p>
+        <h2 class="mt-2 text-3xl font-bold text-[var(--color-text-primary)] sm:text-4xl">
+          What Our Neighbors Say
+        </h2>
+      </div>
+
+      <div class="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {testimonials.map(t => (
+          <div class="relative rounded-2xl border border-[var(--color-border)] bg-[var(--color-background)] p-6 sm:p-8">
+            <!-- Quote icon -->
+            <svg class="absolute top-6 right-6 h-8 w-8 text-primary/10" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10H14.017zM0 21v-7.391c0-5.704 3.731-9.57 8.983-10.609L9.978 5.151c-2.432.917-3.995 3.638-3.995 5.849h4v10H0z"/>
+            </svg>
+            <div class="flex gap-1 text-amber-400">
+              {[...Array(5)].map(() => (
+                <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              ))}
+            </div>
+            <blockquote class="mt-4 text-[var(--color-text-primary)]" style="line-height: 1.7;">
+              "{t.quote}"
+            </blockquote>
+            <p class="mt-4 text-sm font-medium text-[var(--color-text-secondary)]">
+              &mdash; {t.source}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <CTASection />
+</BaseLayout>

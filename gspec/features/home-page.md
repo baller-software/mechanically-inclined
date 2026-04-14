@@ -46,31 +46,31 @@ A home page for a professional services business that introduces the brand, comm
 
 ## Capabilities
 
-- [ ] **P0**: Hero banner displays a prominent headline and supporting text that communicates what the business does
+- [x] **P0**: Hero banner displays a prominent headline and supporting text that communicates what the business does
   - Headline and supporting text are visible immediately on page load without scrolling
   - Text is legible across viewport sizes (desktop, tablet, mobile)
   - Section accommodates an optional background image or visual element
 
-- [ ] **P0**: Value proposition section presents 2-4 core differentiators of the business
+- [x] **P0**: Value proposition section presents 2-4 core differentiators of the business
   - Each differentiator has a short title and brief description
   - Differentiators are visually distinct and scannable (not a wall of text)
   - Section is visually separated from the hero and services sections
 
-- [ ] **P0**: Services overview section lists the primary service offerings
+- [x] **P0**: Services overview section lists the primary service offerings
   - Each service has a name and a brief description (1-3 sentences)
   - Services are presented in a consistent, repeatable layout pattern
   - The section accommodates 3-6 service items without feeling cluttered
 
-- [ ] **P0**: Page is fully responsive across common device sizes
+- [x] **P0**: Page is fully responsive across common device sizes
   - Layout adapts cleanly to desktop (1024px+), tablet (768px), and mobile (375px) viewports
   - No horizontal scrolling on any viewport
   - Text remains readable and images scale appropriately at all sizes
 
-- [ ] **P1**: Page loads quickly with static content
+- [x] **P1**: Page loads quickly with static content
   - Page is usable within 2 seconds on a standard broadband connection
   - Images are appropriately sized and optimized for web delivery
 
-- [ ] **P2**: Semantic page structure supports accessibility
+- [x] **P2**: Semantic page structure supports accessibility
   - Page uses proper heading hierarchy (single h1, logical h2/h3 nesting)
   - Images include descriptive alt text
   - Content is navigable via keyboard
